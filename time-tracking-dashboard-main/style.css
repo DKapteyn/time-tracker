@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap');
+
 :root{
 --blue: hsl(246, 80%, 60%);
---lightred:hsl(15, 100%, 70%);/*(work)*/
+--lightworkred:hsl(15, 100%, 70%);/*(work)*/
 --softblue:hsl(195, 74%, 62%);/*(play)*/
---lightred: hsl(348, 100%, 68%);/*(study)*/
+--lightstudyred: hsl(348, 100%, 68%);/*(study)*/
 --limegreen: hsl(145, 58%, 55%);/*(exercise*/
 --violet:hsl(264, 64%, 52%);/*(social)*/
 --softorange: hsl(43, 84%, 65%); /*(self care)*/
 --verydarkblue:hsl(226, 43%, 10%);
 --darkblue:hsl(235, 46%, 20%);
-- Desaturated blue: hsl(235, 45%, 61%)
-- Pale Blue: hsl(236, 100%, 87%)
+--desaturatedblue:hsl(235, 45%, 61%);
+--paleblue:hsl(236, 100%, 87%);
 }
-
+/*font styles*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap');
 
 html{
     height: 100%;
@@ -31,9 +32,7 @@ html{
     "maincard work play study"
     "maincard exercise social selfcare" ;
 justify-content: center;
-
-margin:1rem;
-padding:1em;
+font-family: 'Rubik', sans-serif;
 gap:1em;
 border-radius:20px;
 
@@ -41,14 +40,60 @@ border-radius:20px;
 
 
 .box{
-   padding:2rem;
+  
    border:2px solid black;
     border-radius:20px;
-    height: 9rem;
-    width:9rem;
-    background-color: var(--darkblue);
     
+    height: 13rem;
+    width:15rem;
+    background-color: var(--darkblue);
+   display:grid;
+   grid-template-rows: 3rem 1fr 1fr 1fr;
+ overflow:hidden
+
+   
+   
+
 }
+
+.box-title{
+    display:flex;
+    background-clip:border-box;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: 500;
+    align-items:center;
+    
+    
+    
+   
+  
+}
+
+.box-title img{
+    height: 5px;
+    width: auto;
+    margin-top:10px;
+}
+
+.current-hours{
+    font-size:36px;
+}
+.previous-hours{
+    font-size:9px
+}
+.background-color{
+    display:flex;
+    justify-content: right;
+    padding-right:12px;
+    overflow: hidden;
+    
+
+
+}
+
 
 #maincard{
     grid-area:maincard;
@@ -57,22 +102,42 @@ border-radius:20px;
 #work{
     grid-area:work;
 }
+#work >.background-color{
+    background-color:var(--lightworkred);
+}
 #play{
     grid-area:play;
+    background-color: var(--darkblue);
 }
+#play > .background-color{
+    background-color:var(--softblue);
+}
+
 #study{
     grid-area:study; 
+}
+#study > .background-color{
+    background-color:var(--lightstudyred);
 }
 #exercise{
     grid-area:exercise;
 }
+#exercise >.background-color{
+    background-color:var(--limegreen);
+}
+
 #social{
     grid-area:social;
+}
+#social >.background-color{
+background-color:var(--violet);
 }
 #selfcare{
     grid-area:selfcare;
 }
-
+#selfcare >.background-color{
+    background-color:var(--softorange);
+}
 
 
 /*.attribution { font-size: 11px; text-align: center; }
