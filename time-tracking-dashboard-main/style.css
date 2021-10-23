@@ -40,25 +40,14 @@ html {
   border-radius: 20px;
   height: 14rem;
   width: 15rem;
- ;
  display:grid;
- 
   grid-template-rows: 3rem 1fr 1fr 1fr;
-  /*overflow:hidden;*/
- 
- 
-  
-
 }
 .background-color {
     display: flex;
     justify-content: right;
     padding-right: 12px;
     overflow: hidden;
-   
-   
-   
-    
   }
 
 .box-title {
@@ -105,8 +94,45 @@ border-bottom-right-radius:15px;
 
 #maincard {
   grid-area: maincard;
-  height: 27.5rem;
+  grid-row:1/-1;
+  border:2px solid black;
+ width:15rem;
+ border-radius: 20px;
+ background-color: var(--darkblue);
+ display:flex;
+ flex-direction: column;
+ overflow:hidden;
+ 
 }
+
+#maincard > img{
+  padding:20px;
+  
+}
+
+#maincard > .topmaincard{
+  background-color: var(--desaturatedblue);
+}
+
+#lasttopmaincard{
+  border-bottom-right-radius:20px;
+  border-bottom-left-radius:20px;
+  padding:20px
+} 
+
+
+#maincard ul{
+  background-color: var(--darkblue);
+ 
+}
+
+#maincard li{
+  list-style-type: none;
+  padding:5px;
+  
+ 
+}
+
 #work {
   grid-area: work;
   background-color: var(--lightworkred)

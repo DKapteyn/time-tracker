@@ -9,16 +9,24 @@ const PreviousPlayHours = document.getElementById('previousPlayHours');
 const currentStudyHours = document.getElementById('currentStudyHours');
 const PreviousStudyHours = document.getElementById('previousStudyHours');
 //EXERCISE
-const currentExeriseHours = document.getElementById('currentExerciseHours');
-const PreviousExeriseHours = document.getElementById('previousExerciseHours');
+const currentExerciseHours = document.getElementById('currentExerciseHours');
+const PreviousExerciseHours = document.getElementById('previousExerciseHours');
 //SOCIAL
 const currentSocialHours = document.getElementById('currentSocialHours');
 const PreviousSocialHours = document.getElementById('previousSocialHours');
 //SELF CARE
 const currentSelfCareHours = document.getElementById('currentSelfCareHours');
 const previousSelfCareHours = document.getElementById('previousSelfCareHours')
+//MAINCARD
+const dailyStats = document.getElementById('daily')
+const weeklyStats = document.getElementById('weekly')
+const monthlyStats = document.getElementById('monthly') 
 
- getJSON('weekly');
+ 
+
+//JSON DATA RETRIEVAL 
+
+getJSON('weekly');
 
 async function getJSON(item){
     const response = await fetch('data.json');
@@ -44,6 +52,13 @@ previousSocialHours.innerText = 'Previous- ' + data[4].timeframes[item].previous
 currentSelfCareHours.innerText = data[5].timeframes[item].current + 'hrs' 
 previousSelfCareHours.innerText = 'Previous- ' + data[5].timeframes[item].previous + 'hrs'
 }
+
+//ONCLICK FUNCTIONS FOR DAILY, WEEKLY, MONTHLY  
+
+document.getElementById('daily').addEventListener("click", () => getJSON("daily"))
+document.getElementById('weekly').addEventListener("click", () => getJSON("weekly"))
+document.getElementById('monthly').addEventListener("click", () => getJSON("monthly"))
+
 
 
 
