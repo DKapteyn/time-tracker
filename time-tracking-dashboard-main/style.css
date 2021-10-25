@@ -95,36 +95,52 @@ color: var(--paleblue);
 
 #maincard {
   grid-area: maincard;
-  height: auto;
   
+  overflow: hidden;
  width:15rem;
  border-radius: 20px;
  background-color: var(--darkblue);
  display:flex;
  flex-direction: column;
  
- justify-content: space-evenly;
+
  
 }
 
-#imagetopmaincard {
-  
- height: 5rem;
- width: 5rem;
-  
-  
-}
+
 
 .topmaincard{
   background-color: var(--blue);
+  border-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 70px;
+  padding-left:30px
+
 }
+
+#imagetopmaincard {
+ padding-top:10px ;
+ height: 6rem;
+ width: 6rem;
+}
+ 
+#reportFor{
+   color:var(--paleblue);
+   padding-top:20px;
+ }
+ 
+ 
+  
+  
+
 
 #lasttopmaincard{
   border-bottom-right-radius:20px;
   border-bottom-left-radius:20px;
-  padding:20px;
+  
   font-size: 40px;
   font-weight: 300;
+
 } 
 
 
@@ -135,7 +151,7 @@ color: var(--paleblue);
 
 #maincard li{
   list-style-type: none;
-  padding:5px;
+ padding:7px 0px 7px 0px;
   color: var(--desaturatedblue);
   
  
