@@ -20,13 +20,19 @@ const previousSelfCareHours = document.getElementById('previousSelfCareHours')
 //MAINCARD
 const dailyStats = document.getElementById('daily')
 const weeklyStats = document.getElementById('weekly')
-const monthlyStats = document.getElementById('monthly') 
+const monthlyStats = document.getElementById('monthly')
+
+let dBlue = 'rgb(111, 118, 200)'
 
  
 
-//JSON DATA RETRIEVAL 
 
-getJSON('weekly');
+//LOAD STATE
+getJSON('daily');
+dailyStats.style.color = 'white'
+
+
+//JSON DATA RETRIEVAL 
 
 async function getJSON(item){
     const response = await fetch('data.json');
@@ -51,14 +57,23 @@ previousSocialHours.innerText = 'Previous- ' + data[4].timeframes[item].previous
 //SELF CARE
 currentSelfCareHours.innerText = data[5].timeframes[item].current + 'hrs' 
 previousSelfCareHours.innerText = 'Previous- ' + data[5].timeframes[item].previous + 'hrs'
+
+
 }
 
 //ONCLICK FUNCTIONS FOR DAILY, WEEKLY, MONTHLY  
 
 document.getElementById('daily').addEventListener("click", () => getJSON("daily"))
 document.getElementById('weekly').addEventListener("click", () => getJSON("weekly"))
-document.getElementById('monthly').addEventListener("click", () => getJSON("monthly"))
+document.getElementById('monthly').addEventListener("click", ()=> getJSON("monthly"))
 
+
+document.getElementById('daily').addEventListener("click", () => {dailyStats.style.color = 'white'; weeklyStats.style.color  = dBlue; monthlyStats.style.color = dBlue
+})
+document.getElementById('weekly').addEventListener("click", () => {dailyStats.style.color = dBlue; weeklyStats.style.color  = 'white'; monthlyStats.style.color = dBlue
+})
+document.getElementById('monthly').addEventListener("click", () => {dailyStats.style.color = dBlue; weeklyStats.style.color  = dBlue; monthlyStats.style.color = 'white'
+})
 
 
 

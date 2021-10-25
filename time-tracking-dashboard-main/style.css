@@ -11,12 +11,11 @@
   --desaturatedblue: hsl(235, 45%, 61%);
   --paleblue: hsl(236, 100%, 87%);
 }
-/*font styles*/
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap");
+
 
 html {
   height: 100%;
-  max-width: 1440px;
+  
   display: grid;
   align-content: center;
   justify-content:center;
@@ -58,6 +57,7 @@ html {
   justify-content: space-between;
   font-size: 18px;
 padding: 15px 30px 20px 30px;
+font-weight: 500;
 
 background-color:var(--darkblue);
 
@@ -77,7 +77,7 @@ background-color:var(--darkblue);
   font-size: 45px;
   padding-left:27px;
   padding-bottom:20px;
-  font-weight:100;
+  font-weight:300;
   background-color:var(--darkblue);
 
 }
@@ -87,6 +87,7 @@ padding-left:27px;
 background-color:var(--darkblue);
 border-bottom-left-radius:15px;
 border-bottom-right-radius:15px;
+color: var(--paleblue);
 
 
 }
@@ -94,30 +95,36 @@ border-bottom-right-radius:15px;
 
 #maincard {
   grid-area: maincard;
-  grid-row:1/-1;
-  border:2px solid black;
+  height: auto;
+  
  width:15rem;
  border-radius: 20px;
  background-color: var(--darkblue);
  display:flex;
  flex-direction: column;
- overflow:hidden;
+ 
+ justify-content: space-evenly;
  
 }
 
-#maincard > img{
-  padding:20px;
+#imagetopmaincard {
+  
+ height: 5rem;
+ width: 5rem;
+  
   
 }
 
-#maincard > .topmaincard{
-  background-color: var(--desaturatedblue);
+.topmaincard{
+  background-color: var(--blue);
 }
 
 #lasttopmaincard{
   border-bottom-right-radius:20px;
   border-bottom-left-radius:20px;
-  padding:20px
+  padding:20px;
+  font-size: 40px;
+  font-weight: 300;
 } 
 
 
@@ -129,6 +136,7 @@ border-bottom-right-radius:15px;
 #maincard li{
   list-style-type: none;
   padding:5px;
+  color: var(--desaturatedblue);
   
  
 }
