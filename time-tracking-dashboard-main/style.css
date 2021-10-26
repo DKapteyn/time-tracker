@@ -23,7 +23,28 @@
     "maincard work play study"
     "maincard exercise social selfcare";
   }
-  
+  .box {
+    border-radius: 20px;
+    height: 13rem;
+    width: 14rem;
+    display: grid;
+    grid-template-areas: "back" "title" "currentHours" "previousHours" ;
+    grid-template-rows: 3rem 1fr 1fr 1fr;
+  }
+  .box-title{
+    font-size: 18px;
+    padding: 15px 30px 20px 30px;
+  }
+  .current-hours{ 
+    font-size: 45px;
+  padding-left: 27px;
+  padding-bottom: 10px;
+  }
+  .previous-hours{ 
+    padding-left: 27px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }
 
 @media screen and (max-width:549px) {
@@ -37,6 +58,19 @@
     "social" 
     "selfcare";
 }
+.box {
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "back back"
+  "title title"
+  "currentHours previousHours";
+  height:7em;
+  
+}
+
+
 }
 
 html {
@@ -57,14 +91,9 @@ display: grid;
   border-radius: 20px;
 }
 
-.box {
-  border-radius: 20px;
-  height: 13rem;
-  width: 14rem;
-  display: grid;
-  grid-template-rows: 3rem 1fr 1fr 1fr;
-}
+
 .background-color {
+  grid-area:back;
   display: flex;
   justify-content: right;
   padding-right: 12px;
@@ -72,13 +101,13 @@ display: grid;
 }
 
 .box-title {
+  grid-area: title;
   display: flex;
   background-clip: border-box;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   justify-content: space-between;
-  font-size: 18px;
-  padding: 15px 30px 20px 30px;
+  
   font-weight: 500;
 
   background-color: var(--darkblue);
@@ -88,22 +117,20 @@ display: grid;
   height: 5px;
   width: auto;
   padding-top: 7px;
+ 
 }
 
 .current-hours {
-  font-size: 45px;
-  padding-left: 27px;
-  padding-bottom: 10px;
+ grid-area:currentHours;
   font-weight: 300;
   background-color: var(--darkblue);
 }
 .previous-hours {
+  grid-area:previousHours;
   font-size: 12px;
-  padding-left: 27px;
-  background-color: var(--darkblue);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+ 
   color: var(--paleblue);
+  background-color: var(--darkblue);
 }
 
 #maincard {
@@ -147,10 +174,14 @@ display: grid;
   background-color: var(--darkblue);
 }
 
-#maincard li {
+.list {
   list-style-type: none;
   padding: 7px 0px 7px 0px;
   color: var(--desaturatedblue);
+  cursor: pointer;
+}
+.list:hover{
+  color:white !important;
 }
 
 #work {
