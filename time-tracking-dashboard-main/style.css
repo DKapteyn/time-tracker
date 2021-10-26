@@ -10,73 +10,67 @@
   --darkblue: hsl(235, 46%, 20%);
   --desaturatedblue: hsl(235, 45%, 61%);
   --paleblue: hsl(236, 100%, 87%);
+  --hoverblue: #343a7b;
 }
 
-
-
-@media screen and (min-width: 550px){
-  html{
-    align-content:center;
+@media screen and (min-width: 750px) {
+  html {
+    align-content: center;
   }
-  .container{
+  .container {
     grid-template-areas:
-    "maincard work play study"
-    "maincard exercise social selfcare";
+      "maincard work play study"
+      "maincard exercise social selfcare";
   }
   .box {
     border-radius: 20px;
     height: 13rem;
     width: 14rem;
     display: grid;
-    grid-template-areas: "back" "title" "currentHours" "previousHours" ;
-    grid-template-rows: 3rem 1fr 1fr 1fr;
+    grid-template-areas: "back"  "lowerbox"  ;
+   
   }
-  .box-title{
+  .box-title {
     font-size: 18px;
-    padding: 15px 30px 20px 30px;
+    /*padding: 15px 30px 20px 30px;*/
   }
-  .current-hours{ 
+  .current-hours {
     font-size: 45px;
-  padding-left: 27px;
-  padding-bottom: 10px;
+    /*padding-left: 27px;*/
+    padding-bottom: 10px;
   }
-  .previous-hours{ 
-    padding-left: 27px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+  .previous-hours {
+    /*padding-left: 27px;*/
   }
 }
 
-@media screen and (max-width:549px) {
-  .container{
-  grid-template-areas: 
-    "maincard" 
-    "work" 
-    "play" 
-    "study" 
-    "exercise"
-    "social" 
-    "selfcare";
-}
-.box {
-  border-radius: 20px;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: 
-  "back back"
-  "title title"
-  "currentHours previousHours";
-  height:7em;
-  
-}
-
-
+@media screen and (max-width: 749px) {
+  .container {
+    grid-template-areas:
+      "maincard"
+      "work"
+      "play"
+      "study"
+      "exercise"
+      "social"
+      "selfcare";
+  }
+  .box {
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "back back"
+      "title title"
+      "currentHours previousHours";
+    height: 7em;
+  }
 }
 
 html {
   height: 100%;
-display: grid;
-  
+  display: grid;
+
   justify-content: center;
   background-color: var(--verydarkblue);
   color: white;
@@ -85,58 +79,61 @@ display: grid;
 
 .container {
   display: grid;
-  
+  overflow: hidden;
   justify-content: center;
-  gap: 1em;
+  gap: 1.5em;
   border-radius: 20px;
 }
 
-
 .background-color {
-  grid-area:back;
+  grid-area: back;
   display: flex;
   justify-content: right;
   padding-right: 12px;
   overflow: hidden;
 }
 
+.lowerbox {
+  grid-area: lowerbox;
+  background-color: var(--darkblue);
+  cursor: pointer;
+  border-radius: 17px;
+  padding: 15px;
+}
+
+.lowerbox:hover {
+  background-color: var(--hoverblue);
+}
+
 .box-title {
   grid-area: title;
   display: flex;
-  background-clip: border-box;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+font-size: 18px;
   justify-content: space-between;
-  
+padding-bottom: 1em;
   font-weight: 500;
-
-  background-color: var(--darkblue);
 }
 
 .box-title img {
   height: 5px;
   width: auto;
   padding-top: 7px;
- 
 }
 
-.box-title img:hover{
+.box-title img:hover {
   filter: brightness(150%);
-  
-
 }
 
 .current-hours {
- grid-area:currentHours;
+  grid-area: currentHours;
   font-weight: 300;
-  background-color: var(--darkblue);
 }
 .previous-hours {
-  grid-area:previousHours;
+  grid-area: previousHours;
   font-size: 12px;
- 
+  padding-bottom: 1em;
+
   color: var(--paleblue);
-  background-color: var(--darkblue);
 }
 
 #maincard {
@@ -186,9 +183,11 @@ display: grid;
   color: var(--desaturatedblue);
   cursor: pointer;
 }
-.list:hover{
-  color:white !important;
+.list:hover {
+  color: white !important;
 }
+
+/*GRID AREA NAMES AND BACKGROUND COLORS FOR BOXES AND ATTRIBUTION STATEMENT*/
 
 #work {
   grid-area: work;
