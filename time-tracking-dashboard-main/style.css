@@ -120,6 +120,12 @@ display: grid;
  
 }
 
+.box-title img:hover{
+  filter: brightness(150%);
+  
+
+}
+
 .current-hours {
  grid-area:currentHours;
   font-weight: 300;
