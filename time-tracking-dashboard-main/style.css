@@ -13,7 +13,7 @@
   --hoverblue: #343a7b;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 376px) {
   html {
     align-content: center;
   }
@@ -24,27 +24,56 @@
   }
   .box {
     border-radius: 20px;
-    height: 13rem;
-    width: 14rem;
     display: grid;
-    grid-template-areas: "back"  "lowerbox"  ;
-   
+    grid-template-areas: "back" "lowerbox";
+
+    width: 255px;
   }
+  .lowerbox {
+    grid-template-areas:
+      "title"
+      "currentHours"
+      "previousHours";
+  }
+
   .box-title {
     font-size: 18px;
-    /*padding: 15px 30px 20px 30px;*/
   }
   .current-hours {
     font-size: 45px;
-    /*padding-left: 27px;*/
-    padding-bottom: 10px;
   }
-  .previous-hours {
-    /*padding-left: 27px;*/
+
+  .background-color {
+    height: 45px;
   }
+  #maincard{
+  width: 245px;
+  }
+  .topmaincard{
+  grid-template-areas: 
+  "clientimage"
+  "report"
+  "clientname";
+  
+  border-radius: 20px;
+  padding-top: 35px;
+  padding-bottom: 85px;
+  padding-left: 30px;
+  }
+  #clientName{
+    font-size: 35px;
+    font-weight: 300;
+
+  }
+  .bottommaincard{
+    padding: 7px 0px 7px 0px;
+  }
+ #reportFor{
+  padding-top: 30px;
+ }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 375px) {
   .container {
     grid-template-areas:
       "maincard"
@@ -58,14 +87,70 @@
   .box {
     border-radius: 20px;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 38px 120px;
+width:330px;
     grid-template-areas:
-      "back back"
+      "back"
+      "lowerbox";
+  }
+
+  .lowerbox {
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:
       "title title"
       "currentHours previousHours";
-    height: 7em;
+    justify-content: space-between;
+   
   }
-}
+  .previous-hours{
+    padding-top:7px
+  }
+  .current-hours{
+    font-size: 30px;
+    padding-bottom: 40px;
+  }
+ 
+ #maincard{
+   width:330px;
+ }
+
+
+  .topmaincard{
+   grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: 
+   "clientimage report"
+   "clientimage clientname"
+   ;
+   padding-left: 10px;
+   height:130px;
+
+   align-content: center;
+
+  }
+  #clientName{
+    font-size: 25px;
+    font-weight: 300;
+    
+    
+
+  }
+  
+  #maincard ul{
+    display:flex;
+    justify-content: space-evenly;
+    
+    padding:0;
+    
+  }
+  #reportFor{
+    padding-top: 15px;
+    
+  }
+ 
+ }
+
+ 
+
 
 html {
   height: 100%;
@@ -81,7 +166,7 @@ html {
   display: grid;
   overflow: hidden;
   justify-content: center;
-  gap: 1.5em;
+  gap: 30px;
   border-radius: 20px;
 }
 
@@ -94,11 +179,12 @@ html {
 }
 
 .lowerbox {
+  display: grid;
   grid-area: lowerbox;
   background-color: var(--darkblue);
   cursor: pointer;
   border-radius: 17px;
-  padding: 15px;
+  padding: 30px;
 }
 
 .lowerbox:hover {
@@ -108,9 +194,9 @@ html {
 .box-title {
   grid-area: title;
   display: flex;
-font-size: 18px;
+  font-size: 18px;
   justify-content: space-between;
-padding-bottom: 1em;
+  padding-bottom: 20px;
   font-weight: 500;
 }
 
@@ -127,11 +213,12 @@ padding-bottom: 1em;
 .current-hours {
   grid-area: currentHours;
   font-weight: 300;
+  padding-bottom: 10px;
 }
 .previous-hours {
   grid-area: previousHours;
-  font-size: 12px;
-  padding-bottom: 1em;
+  font-size: 14px;
+ 
 
   color: var(--paleblue);
 }
@@ -139,51 +226,47 @@ padding-bottom: 1em;
 #maincard {
   grid-area: maincard;
   overflow: hidden;
-  width: 14rem;
+  
   border-radius: 20px;
   background-color: var(--darkblue);
-  display: flex;
-  flex-direction: column;
+ 
 }
 
 .topmaincard {
+  display:grid;
   background-color: var(--blue);
-  border-radius: 20px;
-  padding-top: 15px;
-  padding-bottom: 70px;
-  padding-left: 30px;
+  
 }
 
-#imagetopmaincard {
-  padding-top: 10px;
-  height: 6rem;
-  width: 6rem;
+#clientimage {
+ grid-area:clientimage ;
+  height: 85px;
+  width: 85px;
+ 
 }
 
 #reportFor {
+  grid-area:report;
   color: var(--paleblue);
-  padding-top: 20px;
+  
 }
 
-#lasttopmaincard {
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-
-  font-size: 40px;
-  font-weight: 300;
+#clientName {
+  grid-area:clientname;
+  
+  
 }
 
-#maincard ul {
-  background-color: var(--darkblue);
-}
 
-.list {
+
+.bottommaincard {
+
   list-style-type: none;
-  padding: 7px 0px 7px 0px;
+ 
   color: var(--desaturatedblue);
   cursor: pointer;
 }
-.list:hover {
+.bottommaincard:hover {
   color: white !important;
 }
 
