@@ -76,9 +76,12 @@ document.getElementById('monthly').addEventListener("click", () => {dailyStats.s
 })
 
 
+/*const lowerBox = document.querySelectorAll(".lowerbox");
+const ellipsis = document.querySelectorAll(".icon-ellipsis"); 
 
-    
-   
+ellipsis.forEach((pic) => pic.addEventListener("mouseover", () =>{
+  lowerBox.forEach((l) => l.style.backgroundColor = "rgb(28, 31, 74)")
+} ));*/
 
 
 

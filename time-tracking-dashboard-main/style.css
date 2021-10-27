@@ -46,31 +46,30 @@
   .background-color {
     height: 45px;
   }
-  #maincard{
-  width: 245px;
+  #maincard {
+    width: 245px;
   }
-  .topmaincard{
-  grid-template-areas: 
-  "clientimage"
-  "report"
-  "clientname";
-  
-  border-radius: 20px;
-  padding-top: 35px;
-  padding-bottom: 85px;
-  padding-left: 30px;
+  .topmaincard {
+    grid-template-areas:
+      "clientimage"
+      "report"
+      "clientname";
+
+    border-radius: 20px;
+    padding-top: 35px;
+    padding-bottom: 85px;
+    padding-left: 30px;
   }
-  #clientName{
+  #clientName {
     font-size: 35px;
     font-weight: 300;
-
   }
-  .bottommaincard{
+  .bottommaincard {
     padding: 7px 0px 7px 0px;
   }
- #reportFor{
-  padding-top: 30px;
- }
+  #reportFor {
+    padding-top: 30px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -88,7 +87,7 @@
     border-radius: 20px;
     display: grid;
     grid-template-rows: 38px 120px;
-width:330px;
+    width: 330px;
     grid-template-areas:
       "back"
       "lowerbox";
@@ -100,57 +99,45 @@ width:330px;
       "title title"
       "currentHours previousHours";
     justify-content: space-between;
-   
   }
-  .previous-hours{
-    padding-top:7px
+  .previous-hours {
+    padding-top: 7px;
   }
-  .current-hours{
+  .current-hours {
     font-size: 30px;
     padding-bottom: 40px;
   }
- 
- #maincard{
-   width:330px;
- }
 
-
-  .topmaincard{
-   grid-template-columns: 0.5fr 1fr;
-    grid-template-areas: 
-   "clientimage report"
-   "clientimage clientname"
-   ;
-   padding-left: 10px;
-   height:130px;
-
-   align-content: center;
-
+  #maincard {
+    width: 330px;
   }
-  #clientName{
+
+  .topmaincard {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas:
+      "clientimage report"
+      "clientimage clientname";
+    padding-left: 10px;
+    height: 130px;
+
+    align-content: center;
+  }
+  #clientName {
     font-size: 25px;
     font-weight: 300;
-    
-    
-
+    padding-bottom: 10px;
   }
-  
-  #maincard ul{
-    display:flex;
+
+  #maincard ul {
+    display: flex;
     justify-content: space-evenly;
-    
-    padding:0;
-    
-  }
-  #reportFor{
-    padding-top: 15px;
-    
-  }
- 
- }
 
- 
-
+    padding: 0;
+  }
+  #reportFor {
+    padding-top: 20px;
+  }
+}
 
 html {
   height: 100%;
@@ -191,6 +178,7 @@ html {
   background-color: var(--hoverblue);
 }
 
+
 .box-title {
   grid-area: title;
   display: flex;
@@ -204,6 +192,7 @@ html {
   height: 5px;
   width: auto;
   padding-top: 7px;
+  
 }
 
 .box-title img:hover {
@@ -218,7 +207,6 @@ html {
 .previous-hours {
   grid-area: previousHours;
   font-size: 14px;
- 
 
   color: var(--paleblue);
 }
@@ -226,43 +214,36 @@ html {
 #maincard {
   grid-area: maincard;
   overflow: hidden;
-  
+
   border-radius: 20px;
   background-color: var(--darkblue);
- 
 }
 
 .topmaincard {
-  display:grid;
+  display: grid;
   background-color: var(--blue);
-  
 }
 
 #clientimage {
- grid-area:clientimage ;
-  height: 85px;
-  width: 85px;
- 
+  grid-area: clientimage;
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  border:5px solid white;
 }
 
 #reportFor {
-  grid-area:report;
+  grid-area: report;
   color: var(--paleblue);
-  
 }
 
 #clientName {
-  grid-area:clientname;
-  
-  
+  grid-area: clientname;
 }
 
-
-
 .bottommaincard {
-
   list-style-type: none;
- 
+
   color: var(--desaturatedblue);
   cursor: pointer;
 }
