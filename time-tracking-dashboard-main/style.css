@@ -25,9 +25,8 @@ html {
 
 .container {
   display: grid;
-  overflow: hidden;
   justify-content: center;
-  gap: 30px;
+  
   border-radius: 20px;
 }
 
@@ -173,12 +172,12 @@ html {
     grid-template-areas:
       "maincard work play study"
       "maincard exercise social selfcare";
+      gap: 30px;
   }
   .box {
     border-radius: 20px;
     display: grid;
     grid-template-areas: "back" "lowerbox";
-
     width: 255px;
   }
   .lowerbox {
@@ -235,6 +234,7 @@ html {
       "exercise"
       "social"
       "selfcare";
+      gap:25px;
   }
   .box {
     border-radius: 20px;
@@ -272,6 +272,7 @@ html {
       "clientimage clientname";
     padding-left: 10px;
     height: 130px;
+    border-radius: 20px;
 
     align-content: center;
   }
