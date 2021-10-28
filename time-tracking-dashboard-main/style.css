@@ -83,7 +83,7 @@ html {
 }
 
 #clientcard {
-  grid-area: maincard;
+  grid-area: clientcard;
   overflow: hidden;
 
   border-radius: 20px;
@@ -170,8 +170,8 @@ html {
   }
   .container {
     grid-template-areas:
-      "maincard work play study"
-      "maincard exercise social selfcare";
+      "clientcard work play study"
+      "clientcard exercise social selfcare";
       gap: 30px;
   }
   .box {
@@ -227,7 +227,7 @@ html {
 @media screen and (max-width: 375px) {
   .container {
     grid-template-areas:
-      "maincard"
+      "clientcard"
       "work"
       "play"
       "study"
