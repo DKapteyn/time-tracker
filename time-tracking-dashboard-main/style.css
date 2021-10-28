@@ -13,132 +13,6 @@
   --hoverblue: #343a7b;
 }
 
-@media screen and (min-width: 376px) {
-  html {
-    align-content: center;
-  }
-  .container {
-    grid-template-areas:
-      "maincard work play study"
-      "maincard exercise social selfcare";
-  }
-  .box {
-    border-radius: 20px;
-    display: grid;
-    grid-template-areas: "back" "lowerbox";
-
-    width: 255px;
-  }
-  .lowerbox {
-    grid-template-areas:
-      "title"
-      "currentHours"
-      "previousHours";
-  }
-
-  .box-title {
-    font-size: 18px;
-  }
-  .current-hours {
-    font-size: 45px;
-  }
-
-  .background-color {
-    height: 45px;
-  }
-  #maincard {
-    width: 245px;
-  }
-  .topmaincard {
-    grid-template-areas:
-      "clientimage"
-      "report"
-      "clientname";
-
-    border-radius: 20px;
-    padding-top: 35px;
-    padding-bottom: 85px;
-    padding-left: 30px;
-  }
-  #clientName {
-    font-size: 35px;
-    font-weight: 300;
-  }
-  .bottommaincard {
-    padding: 7px 0px 7px 0px;
-  }
-  #reportFor {
-    padding-top: 30px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .container {
-    grid-template-areas:
-      "maincard"
-      "work"
-      "play"
-      "study"
-      "exercise"
-      "social"
-      "selfcare";
-  }
-  .box {
-    border-radius: 20px;
-    display: grid;
-    grid-template-rows: 38px 120px;
-    width: 330px;
-    grid-template-areas:
-      "back"
-      "lowerbox";
-  }
-
-  .lowerbox {
-    grid-template-rows: 30px 1fr;
-    grid-template-areas:
-      "title title"
-      "currentHours previousHours";
-    justify-content: space-between;
-  }
-  .previous-hours {
-    padding-top: 7px;
-  }
-  .current-hours {
-    font-size: 30px;
-    padding-bottom: 40px;
-  }
-
-  #maincard {
-    width: 330px;
-  }
-
-  .topmaincard {
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-areas:
-      "clientimage report"
-      "clientimage clientname";
-    padding-left: 10px;
-    height: 130px;
-
-    align-content: center;
-  }
-  #clientName {
-    font-size: 25px;
-    font-weight: 300;
-    padding-bottom: 10px;
-  }
-
-  #maincard ul {
-    display: flex;
-    justify-content: space-evenly;
-
-    padding: 0;
-  }
-  #reportFor {
-    padding-top: 20px;
-  }
-}
-
 html {
   height: 100%;
   display: grid;
@@ -178,7 +52,6 @@ html {
   background-color: var(--hoverblue);
 }
 
-
 .box-title {
   grid-area: title;
   display: flex;
@@ -192,7 +65,6 @@ html {
   height: 5px;
   width: auto;
   padding-top: 7px;
-  
 }
 
 .box-title img:hover {
@@ -211,7 +83,7 @@ html {
   color: var(--paleblue);
 }
 
-#maincard {
+#clientcard {
   grid-area: maincard;
   overflow: hidden;
 
@@ -219,7 +91,7 @@ html {
   background-color: var(--darkblue);
 }
 
-.topmaincard {
+.topclientcard {
   display: grid;
   background-color: var(--blue);
 }
@@ -229,7 +101,7 @@ html {
   height: 80px;
   width: 80px;
   border-radius: 50px;
-  border:5px solid white;
+  border: 5px solid white;
 }
 
 #reportFor {
@@ -241,13 +113,13 @@ html {
   grid-area: clientname;
 }
 
-.bottommaincard {
+.bottomclientcard {
   list-style-type: none;
 
   color: var(--desaturatedblue);
   cursor: pointer;
 }
-.bottommaincard:hover {
+.bottomclientcard:hover {
   color: white !important;
 }
 
@@ -290,4 +162,131 @@ html {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*LARGE SCREEN*/
+@media screen and (min-width: 376px) {
+  html {
+    align-content: center;
+  }
+  .container {
+    grid-template-areas:
+      "maincard work play study"
+      "maincard exercise social selfcare";
+  }
+  .box {
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas: "back" "lowerbox";
+
+    width: 255px;
+  }
+  .lowerbox {
+    grid-template-areas:
+      "title"
+      "currentHours"
+      "previousHours";
+  }
+
+  .box-title {
+    font-size: 18px;
+  }
+  .current-hours {
+    font-size: 45px;
+  }
+
+  .background-color {
+    height: 45px;
+  }
+  #clientcard {
+    width: 245px;
+  }
+  .topclientcard {
+    grid-template-areas:
+      "clientimage"
+      "report"
+      "clientname";
+
+    border-radius: 20px;
+    padding-top: 35px;
+    padding-bottom: 85px;
+    padding-left: 30px;
+  }
+  #clientName {
+    font-size: 35px;
+    font-weight: 300;
+  }
+  .bottomclientcard {
+    padding: 7px 0px 7px 0px;
+  }
+  #reportFor {
+    padding-top: 30px;
+  }
+}
+/*SMALL SCREEN*/
+
+@media screen and (max-width: 375px) {
+  .container {
+    grid-template-areas:
+      "maincard"
+      "work"
+      "play"
+      "study"
+      "exercise"
+      "social"
+      "selfcare";
+  }
+  .box {
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 38px 120px;
+    width: 330px;
+    grid-template-areas:
+      "back"
+      "lowerbox";
+  }
+
+  .lowerbox {
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:
+      "title title"
+      "currentHours previousHours";
+    justify-content: space-between;
+  }
+  .previous-hours {
+    padding-top: 7px;
+  }
+  .current-hours {
+    font-size: 30px;
+    padding-bottom: 40px;
+  }
+
+  #clientcard {
+    width: 330px;
+  }
+
+  .topclientcard {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas:
+      "clientimage report"
+      "clientimage clientname";
+    padding-left: 10px;
+    height: 130px;
+
+    align-content: center;
+  }
+  #clientName {
+    font-size: 25px;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
+
+  #clientcard ul {
+    display: flex;
+    justify-content: space-evenly;
+  padding: 0;
+  }
+  #reportFor {
+    padding-top: 20px;
+  }
 }
