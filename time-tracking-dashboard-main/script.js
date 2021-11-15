@@ -22,6 +22,8 @@ const dailyStats = document.getElementById('daily')
 const weeklyStats = document.getElementById('weekly')
 const monthlyStats = document.getElementById('monthly')
 
+const lowerBox = document.querySelectorAll(".lowerbox");
+const ellipsis = document.querySelectorAll(".icon-ellipsis"); 
 let dBlue = 'rgb(111, 118, 200)'
 
  
@@ -75,15 +77,17 @@ document.getElementById('weekly').addEventListener("click", () => {dailyStats.st
 document.getElementById('monthly').addEventListener("click", () => {dailyStats.style.color = dBlue; weeklyStats.style.color  = dBlue; monthlyStats.style.color = 'white'
 })
 
+//MOUSE OVER AND MOUSE LEAVE FOR BOX BACKGROUND COLOR
 
-/*const lowerBox = document.querySelectorAll(".lowerbox");
-const ellipsis = document.querySelectorAll(".icon-ellipsis"); 
+
 
 ellipsis.forEach((pic) => pic.addEventListener("mouseover", () =>{
   lowerBox.forEach((l) => l.style.backgroundColor = "rgb(28, 31, 74)")
-} ));*/
+} ));
 
-
+ellipsis.forEach((pic) => pic.addEventListener("mouseleave", () =>{
+  lowerBox.forEach((l) => l.style.backgroundColor = "")
+} ));
 
 
 
