@@ -22,12 +22,38 @@ html {
   color: white;
   font-family: "Rubik", sans-serif;
 }
+@media screen and (min-width: 576px) {
+  html {
+    align-content: center;
+  }
+}
 
 .container {
   display: grid;
   justify-content: center;
-  
+
   border-radius: 20px;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    grid-template-areas:
+      "clientcard work play study"
+      "clientcard exercise social selfcare";
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    grid-template-areas:
+      "clientcard"
+      "work"
+      "play"
+      "study"
+      "exercise"
+      "social"
+      "selfcare";
+    gap: 25px;
+  }
 }
 
 .background-color {
@@ -37,6 +63,31 @@ html {
   padding-right: 12px;
   overflow: hidden;
 }
+@media screen and (min-width: 576px) {
+  .background-color {
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .box {
+    border-radius: 20px;
+    display: grid;
+    grid-template-areas: "back" "lowerbox";
+    width: 255px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .box {
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: 38px 120px;
+    width: 330px;
+    grid-template-areas:
+      "back"
+      "lowerbox";
+  }
+}
 
 .lowerbox {
   display: grid;
@@ -45,6 +96,24 @@ html {
   cursor: pointer;
   border-radius: 17px;
   padding: 30px;
+}
+
+@media screen and (min-width: 576px) {
+  .lowerbox {
+    grid-template-areas:
+      "title"
+      "currentHours"
+      "previousHours";
+  }
+}
+@media screen and (max-width: 575px) {
+  .lowerbox {
+    grid-template-rows: 30px 1fr;
+    grid-template-areas:
+      "title title"
+      "currentHours previousHours";
+    justify-content: space-between;
+  }
 }
 
 .lowerbox:hover {
@@ -58,6 +127,11 @@ html {
   justify-content: space-between;
   padding-bottom: 20px;
   font-weight: 500;
+}
+@media screen and (min-width: 576px) {
+  .box-title {
+    font-size: 18px;
+  }
 }
 
 .box-title img {
@@ -75,11 +149,27 @@ html {
   font-weight: 300;
   padding-bottom: 10px;
 }
+@media screen and (min-width: 576px) {
+  .current-hours {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .current-hours {
+    font-size: 30px;
+    padding-bottom: 40px;
+  }
+}
 .previous-hours {
   grid-area: previousHours;
   font-size: 14px;
 
   color: var(--paleblue);
+}
+@media screen and (max-width: 575px) {
+  .previous-hours {
+    padding-top: 7px;
+  }
 }
 
 #clientcard {
@@ -89,10 +179,46 @@ html {
   border-radius: 20px;
   background-color: var(--darkblue);
 }
+@media screen and (min-width: 576px) {
+  #clientcard {
+    width: 245px;
+  }
+}
+@media screen and (max-width: 575px) {
+  #clientcard {
+    width: 330px;
+  }
+}
 
 .topclientcard {
   display: grid;
   background-color: var(--blue);
+}
+@media screen and (min-width: 576px) {
+  .topclientcard {
+    grid-template-areas:
+      "clientimage"
+      "report"
+      "clientname";
+
+    border-radius: 20px;
+    padding-top: 35px;
+    padding-bottom: 85px;
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .topclientcard {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas:
+      "clientimage report"
+      "clientimage clientname";
+    padding-left: 10px;
+    height: 130px;
+    border-radius: 20px;
+
+    align-content: center;
+  }
 }
 
 #clientimage {
@@ -111,12 +237,36 @@ html {
 #clientName {
   grid-area: clientname;
 }
+@media screen and (min-width: 576px) {
+  #clientName {
+    font-size: 35px;
+    font-weight: 300;
+  }
+}
+@media screen and (max-width: 575px) {
+  #clientName {
+    font-size: 25px;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
+
+  #clientcard ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+}
 
 .bottomclientcard {
   list-style-type: none;
 
   color: var(--desaturatedblue);
   cursor: pointer;
+}
+@media screen and (min-width: 576px) {
+  .bottomclientcard {
+    padding: 7px 0px 7px 0px;
+  }
 }
 .bottomclientcard:hover {
   color: white !important;
@@ -154,6 +304,17 @@ html {
   background-color: var(--softorange);
 }
 
+@media screen and (min-width: 576px) {
+  #reportFor {
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  #reportFor {
+    padding-top: 20px;
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -161,133 +322,4 @@ html {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-/*LARGE SCREEN*/
-@media screen and (min-width: 376px) {
-  html {
-    align-content: center;
-  }
-  .container {
-    grid-template-areas:
-      "clientcard work play study"
-      "clientcard exercise social selfcare";
-      gap: 30px;
-  }
-  .box {
-    border-radius: 20px;
-    display: grid;
-    grid-template-areas: "back" "lowerbox";
-    width: 255px;
-  }
-  .lowerbox {
-    grid-template-areas:
-      "title"
-      "currentHours"
-      "previousHours";
-  }
-
-  .box-title {
-    font-size: 18px;
-  }
-  .current-hours {
-    font-size: 45px;
-  }
-
-  .background-color {
-    height: 45px;
-  }
-  #clientcard {
-    width: 245px;
-  }
-  .topclientcard {
-    grid-template-areas:
-      "clientimage"
-      "report"
-      "clientname";
-
-    border-radius: 20px;
-    padding-top: 35px;
-    padding-bottom: 85px;
-    padding-left: 30px;
-  }
-  #clientName {
-    font-size: 35px;
-    font-weight: 300;
-  }
-  .bottomclientcard {
-    padding: 7px 0px 7px 0px;
-  }
-  #reportFor {
-    padding-top: 30px;
-  }
-}
-/*SMALL SCREEN*/
-
-@media screen and (max-width: 375px) {
-  .container {
-    grid-template-areas:
-      "clientcard"
-      "work"
-      "play"
-      "study"
-      "exercise"
-      "social"
-      "selfcare";
-      gap:25px;
-  }
-  .box {
-    border-radius: 20px;
-    display: grid;
-    grid-template-rows: 38px 120px;
-    width: 330px;
-    grid-template-areas:
-      "back"
-      "lowerbox";
-  }
-
-  .lowerbox {
-    grid-template-rows: 30px 1fr;
-    grid-template-areas:
-      "title title"
-      "currentHours previousHours";
-    justify-content: space-between;
-  }
-  .previous-hours {
-    padding-top: 7px;
-  }
-  .current-hours {
-    font-size: 30px;
-    padding-bottom: 40px;
-  }
-
-  #clientcard {
-    width: 330px;
-  }
-
-  .topclientcard {
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-areas:
-      "clientimage report"
-      "clientimage clientname";
-    padding-left: 10px;
-    height: 130px;
-    border-radius: 20px;
-
-    align-content: center;
-  }
-  #clientName {
-    font-size: 25px;
-    font-weight: 300;
-    padding-bottom: 10px;
-  }
-
-  #clientcard ul {
-    display: flex;
-    justify-content: space-evenly;
-  padding: 0;
-  }
-  #reportFor {
-    padding-top: 20px;
-  }
 }
