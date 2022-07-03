@@ -2,7 +2,7 @@
 
 # Time tracking dashboard
 
-### App showing amount of time spent on activities over last day/week/month.
+## App showing amount of time spent on activities over last day/week/month.
 
 App information is created using a fetch call to a local JSON file. It includes dynamic style based on screen size and hover states for buttons and links.
 
